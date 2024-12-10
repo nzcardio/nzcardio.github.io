@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair Display&family=Poppins&display=swap');
-$font-title: 'Poppins', serif;
+$font-title: 'Playfair Display', serif;
 $font-body: 'Open sans', sans-serif;
+$font-body-alt: 'Poppins', sans-serif;
 $font-logo: 'Playfair Display', serif;
 
 $black: #001514;
@@ -60,6 +61,7 @@ $icon-big: $yellow;
 
 $blockquote-color: $blue-darker;
 $blockquote-bg: $yellow;
+$blockquote-font: $font-body-alt;
 
 // blocks
 $block-bg: $white-off;
@@ -76,3 +78,8 @@ $page-footer-link-hover-color: $orange;
 
 $page-footer-banner: $white-off;
 $page-footer-banner-color: $blue-dark;
+
+// overrides
+h3,h4,h5,h6 {
+    font-family: $font-body-alt !important;
+}
