@@ -1,0 +1,96 @@
+.row {
+    margin-bottom: 20px;
+
+    label {
+        display: block;
+        vertical-align: middle;
+    }
+
+    &.radio-buttons {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 10px;
+        margin-left: 20px;
+        padding-top: 10px;
+
+        label {
+            font-size: 16px;
+        }
+    }
+
+    &.checkbox-buttons {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        // align-items: center;
+        gap: 20px;
+
+        label {
+            font-size: 16px;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+label {
+    display: block;
+    font-size: 13px;
+}
+
+input,
+input[type="email"],
+textarea {
+    @include border-radius($border-radius);
+    padding: 10px 15px;
+    border: 0 none;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: $grey-1;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-bottom: 0;
+    border: 1px solid $blue-dark;
+}
+
+.info {
+    margin-left: 20px;
+    @include border-radius($border-radius);
+    padding: 10px;
+
+    @include for-phone-only {
+        margin-left: 0px;
+    }
+}
+
+.radio-buttons {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    
+    label {
+        display: inline-block;
+        border-radius: $border-radius;
+        padding: 10px 12px;
+        background:$white;
+        color: $page-header-btn-link-color;
+        cursor: pointer;
+        @include transition(color 200ms ease-out 0.1s);
+        @include transition(background-color 200ms);
+
+        &.selected {
+            background: $page-header-btn-link-color;
+            color: $white;
+        }
+
+        input {
+            display: none;
+        }
+    }
+}

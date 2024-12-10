@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 120%;
+  /*16px*/
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $body-bg;
+  font-family: $font-body;
+  font-weight: 400;
+  line-height: 1.65;
+  color: $body-color;
+}
+
+p {
+  margin-bottom: var(--spacing-2);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  position: relative;
+  font-family: $font-title;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--spacing-2);
+  // text-transform: uppercase;
+
+  // @include for-phone-only {
+  //   text-align: center;
+  // }
+}
+
+h4 {
+  padding-bottom: 5px;
+
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 68px;
+}
+
+h2 {
+  font-size: 48px;
+
+  @include for-phone-only {
+    font-size: 32px;
+  }
+}
+
+h3 {
+  font-size: 33px;
+  @include for-phone-only {
+      font-size: 28px;
+  }
+}
+
+h4 {
+  font-size: 28px;
+  @include for-phone-only {
+      font-size: 22px;
+  }
+}
+
+h5 {
+  font-size: 22px;
+  @include for-phone-only {
+    font-size: 16px;
+  }
+}
+
+h6 {
+  font-size: 12px
+}
+
+@include for-phone-only {
+  h1 {
+    font-size: 46px;
+  }
+
+  // h2 { margin-left: 0;}
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+}
+
+small,
+.text_small {
+  font-size: 0.8em;
+}
+
+ul,
+ol {
+  margin-bottom: var(--spacing-2);
+
+  li {
+    margin-left: 25px;
+    margin-bottom: 10px;
+  }
+
+  &.no-style {
+    list-style: none;
+  }
+}
+
+ul {
+  list-style: square;
+}
+
+img {
+  outline: none;
+  width: 100%;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    @include transition(color 200ms ease-out 0.1s);
+    color: $hover;
+  }
+
+  &.active {
+    color: $hover;
+  }
+}
+
+article {
+  margin-bottom: 40px;
+}
+
+pre {
+  background: $grey-1;
+  border: 1px solid $grey-1;
+  padding: 10px;
+  margin-bottom: var(--spacing-2);
+  overflow: auto;
+
+  code {
+    background: transparent;
+  }
+}
+
+code {
+  background: $grey-1;
+  color: $grey-4;
+  padding: 4px 0;
+}
+
+hr {
+  margin: 0 0 var(--spacing-2) 0;
+  border: 0 none;
+  border-bottom: 4px solid var(--hr-color, $blue);
+
+  &.white {
+    border-bottom: 4px solid var(--hr-color, $white);
+  }
+
+  &.blue-dark {
+    border-bottom: 4px solid var(--hr-color, $blue-dark);
+  }
+
+  &.yellow {
+    border-bottom: 4px solid var(--hr-color, $yellow);
+  }
+}
+
+blockquote {
+  position: relative;
+  color: $blockquote-color;
+  background: $blockquote-bg;
+  // margin: 40px 10% 40px 10%;
+  font-family: $font-title;
+  font-style: italic;
+  font-size: x-large;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  border-radius: $border-radius;
+  padding: 40px 30px 30px 30px;
+}
+
+blockquote:before {
+  color: $blockquote-color;
+  content: open-quote;
+  font-size: 5em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.40em;
+  position: absolute;
+  top: 23px;
+  left: -15px;
+}
+
+blockquote:after {
+  // display: none;
+  color: $blockquote-color;
+  content: close-quote;
+  font-size: 5em;
+  line-height: 0.1em;
+  margin-left: 0.25em;
+  vertical-align: -0.45em;
+  position: absolute;
+  bottom: -33px;
+  right: 20px;
+}
+
+blockquote p {
+  display: inline;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+
+  tr {
+    text-align: left;
+
+    th {
+      border-bottom: 2px solid $grey-2;
+      padding: 10px 10px 5px 0;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: small;
+      
+      @include for-phone-only {
+        &:first-child {
+            width: 30%;
+            margin-right: 15px;
+        }
+      }
+
+      @include for-tablet-portrait-up {
+        font-size: 100%;
+        padding: 10px 30px 5px 0;
+      }
+    }
+
+    td {
+      border-bottom: 1px solid $grey-2;
+      padding: 10px 10px 5px 0;
+      vertical-align: top;
+      font-size: small;
+
+      @include for-phone-only {
+        &:first-child {
+          width: 30%;
+          margin-right: 15px;
+        }
+      }
+
+      @include for-tablet-portrait-up {
+        font-size: 100%;
+        padding: 10px 30px 5px 0;
+      }
+
+      &.border-top {
+        border-top: 1px solid $grey-2;
+      }
+
+      img {
+        width: auto;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+address {
+  width: 100%;
+  font-style: normal;
+}

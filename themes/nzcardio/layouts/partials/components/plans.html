@@ -1,0 +1,312 @@
+<section>
+    <div class="container pt-5">
+        <h2 class="align-center m-0 p-0"><span class="huge-number">1.</span> CHOOSE A PLAN</h2>
+
+        <div class="content-narrow address-search pt-5 mb-10">
+            <label for="address-lookup" class="block mb-1">What internet connection can I get at my place?</label>
+            <input type="text" placeholder="Enter in your address" id="address-lookup" class="large" x-model="address" autocomplete="off" @keyup.debounce.500="
+            if(address == '') {
+                address = null;
+                addressShowResults = false
+            } else {
+                fetch('https://portal.onebay.co.nz/addresses?q='+address)
+                .then(response => response.json())
+                .then(json => { 
+                    $refs.results.innerHTML = addressLookup(json, 'address', 'plans');
+                });
+                addressShowResults = true
+            }"/>
+
+            <div class="results" x-ref="results" x-show="addressShowResults"><div class="align-center"><i class="fas fa-circle-notch fa-spin red"></i> Loading data...</div></div>
+            <div class="overlay xx-large align-center" x-show="loading">
+                <div><i class="fas fa-circle-notch fa-spin red"></i> Loading data...</div>
+            </div>
+
+            
+        </div>
+
+        <!-- FIBRE -->
+        <div id="plans" class="scroll-offset" x-show="showOnly != null"><a @click="showOnly = null; plan = null">Show all</a></div>
+        <div class="plans" :class="{ 'grid two gap20': showOnly === null }" x-show="plan == null">
+            <div class="content-section bg-beige pt-7" x-show="showOnly != 'adsl' && showOnly != 'vdsl'">
+                <div class="badge">
+                    <img src="/imgs/badge-fibre.svg" alt="" />
+                </div>
+                
+                <h3>FIBRE</h3>
+                <p>Lightning fast fibre internet connection for heavy usage delivered to your home via a <a href="/help/installation/fibre">fibre optic cable that needs to be installed</a>, but is not available in all areas.</p>
+                
+                <div class="content-section bg-white mb-2 grid middle" :class="{ 'three': showOnly === null, 'four': showOnly !== null }">
+                    <div class="align-center px-2">
+                        <div><img src="/imgs/plan-dial-ufb-100.svg" alt="" /></div>
+                        <h5 class="p-0 m-0 orange">UFB 100</h5>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Everyday use</li>
+                            <li>Smaller households</li>
+                            <li>Best value</li>
+                        </ul>
+                    </div>
+                    <div x-show="showOnly === 'fibre' && showOnly !== null">
+                        <ul>
+                            <li>Unlimted data</li>
+                            <li>100 Mbs download</li>
+                            <li>20 Mbs upload</li>
+                        </ul>
+                    </div>
+                    <div class="align-right">
+                        <div class="price mb-5">
+                            <div>
+                                <span class="orange bold">$<span class="very-large">79</span></span>
+                            </div>
+                            <div class="small">/month</small></div>
+                        </div>
+
+                        <a @click="plan = 'ufb100'; modem = 'pro'" class="btn">Select</a>
+                    </div>
+                </div>
+
+                <div class="content-section bg-white grid middle featured" :class="{ 'three': showOnly === null, 'four': showOnly !== null }">
+                    <div>
+                        <div class="align-center px-2">
+                            <img src="/imgs/plan-dial-ufb-900.svg" alt="" />
+                            <h5 class="p-0 m-0 red">UFB 900</h5>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Online gaming</li>
+                            <li>Lots of devices</li>
+                            <li>Multiple streaming devices</li>
+                        </ul>
+                    </div>
+                    <div x-show="showOnly === 'fibre' && showOnly !== null">
+                        <ul>
+                            <li>Unlimted data</li>
+                            <li>500-900 Mbs download</li>
+                            <li>400-500 Mbs upload</li>
+                        </ul>
+                    </div>
+                    <div class="align-right">
+                        <div class="price mb-5">
+                            <div>
+                                <span class="red bold">$<span class="very-large">109</span></span>
+                            </div>
+                            <div class="small">/month</small></div>
+                        </div>
+
+                        <a @click="plan = 'ufb900'; modem = 'pro'" class="btn bg-red">Select</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- COPPER -->
+            <div class="content-section bg-beige pt-7" x-show="showOnly != 'fibre'">
+                <div class="badge">
+                    <img src="/imgs/badge-copper.svg" alt="" />
+                </div>
+
+                <h3>COPPER</h3>
+                <p>Widely available internet for light to medium usage, delivered to your home over the old copper phone lines - so no extra equipment other than a <a href="/help/modem/modems">modem</a> is required.</p>
+                
+                <div class="content-section bg-white mb-2 grid two middle" :class="{ 'two': showOnly === null, 'four': showOnly !== null }">
+                    <div class="align-center">
+                        <img src="/imgs/plan-dial-adsl.svg" alt="" />
+                        <h5 class="p-0 m-0 green">ADSL</h5>
+                    </div>
+                    <div x-show="showOnly !== 'fibre' && showOnly !== null">
+                        <ul>
+                            <li>Widely available</li>
+                            <li>Light internet useage</li>
+                            <li>Best value</li>
+                        </ul>
+                    </div>
+                    <div x-show="showOnly !== 'fibre' && showOnly !== null">
+                        <ul>
+                            <li>Unlimted data</li>
+                            <li>5-15 Mbs download</li>
+                            <li>1 Mbs upload</li>
+                        </ul>
+                    </div>
+                    <div class="align-right">
+                        <div class="price mb-3">
+                            <div>
+                                <span class="green bold">$<span class="very-large">79</span></span>
+                            </div>
+                            <div class="small">/month</small></div>
+                        </div>
+                        <a @click="plan = 'adsl'; modem = 'standard'" class="btn bg-green">Select</a>
+                    </div>
+                </div>
+
+                <div class="content-section bg-white grid middle" :class="{ 'two': showOnly === null, 'four': showOnly !== null }" x-show="showOnly != 'adsl'">
+                    <div class="align-center">
+                        <img src="/imgs/plan-dial-vdsl.svg" alt="" />
+                        <h5 class="p-0 m-0 blue-dark">VDSL</h5>
+                    </div>
+                    <div x-show="showOnly !== 'fibre' && showOnly !== null">
+                        <ul>
+                            <li>Widely available</li>
+                            <li>Medium internet useage</li>
+                            <li>Entry level streaming and gaming</li>
+                        </ul>
+                    </div>
+                    <div x-show="showOnly !== 'fibre' && showOnly !== null">
+                        <ul>
+                            <li>Unlimited data</li>
+                            <li>15 - 60 Mbps down</li>
+                            <li>5 - 18 Mbps up</li>
+                        </ul>
+                    </div>
+                    <div class="align-right">
+                        <div class="price mb-3">
+                            <div>
+                                <span class="blue-dark bold">$<span class="very-large">89</span></span>
+                            </div>
+                            <div class="small">/month</small></div>
+                        </div>
+                        <a @click="plan = 'vdsl'; modem = 'standard'" class="btn bg-blue-dark">Select</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single plans -->
+        <div class="single-plan animated fadeIn" x-show="plan != null">
+            <!-- ADSL -->
+            <div class="content-section bg-beige" x-show="plan == 'adsl'">
+                <div class="badge">
+                    <img src="/imgs/badge-copper.svg" alt="" />
+                </div>
+                <div class="grid two gap20 middle">
+                    <div>
+                        <a @click="plan = null" class="btn back bg-red">Back</a>
+                        <p class="large bold mb-0">You have selected:</p>
+                    </div>
+                    <div class="content-section bg-white pt-5 pb-2 align-center">
+                        <div class="align-center blue-dark">
+                            <img src="/imgs/plan-dial-adsl.svg" alt="" />
+                            <h5 class="p-0 m-0 green">ADSL</h5>
+                        </div>
+                        <p>Includes:</p>
+                        <ul class="no-style mb-4">
+                            <li>Unlimited data</li>
+                            <li>5 - 20 Mbps down</li>
+                            <li>1 Mbps up</li>
+                        </ul>
+
+                        <div class="price mb-3">
+                            <div>
+                                <span class="green bold">$<span class="very-large">79</span></span>
+                            </div>
+                            <div class="small">/month</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VDSL -->
+            <div class="content-section bg-beige" x-show="plan == 'vdsl'">
+                <div class="badge">
+                    <img src="/imgs/badge-copper.svg" alt="" />
+                </div>
+                <div class="grid two gap20 middle">
+                    <div>
+                        <a @click="plan = null" class="btn back bg-red">Back</a>
+                        <p class="large bold mb-0">You have selected:</p>
+                    </div>
+                    <div class="content-section bg-white pt-5 pb-2 align-center">
+                        <div class="align-center mb-2">
+                            <img src="/imgs/plan-dial-vdsl.svg" alt="" />
+                            <h5 class="p-0 m-0 blue-dark">VDSL</h5>
+                        </div>
+                        <p>Includes:</p>
+                        <ul class="no-style mb-4">
+                            <li>Unlimited data</li>
+                            <li>15 - 60 Mbps down</li>
+                            <li>5 - 18 Mbps up</li>
+                        </ul>
+
+                        <div class="price mb-3">
+                            <div>
+                                <span class="blue-dark bold">$<span class="very-large">89</span></span>
+                            </div>
+                            <div class="small">/month</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UFB 100 -->
+            <div class="content-section bg-beige" x-show="plan == 'ufb100'">
+                <div class="badge">
+                    <img src="/imgs/badge-fibre.svg" alt="" />
+                </div>
+                <div class="grid two gap20 middle">
+                    <div>
+                        <a @click="plan = null" class="btn back bg-red">Back</a>
+                        <p class="large bold mb-0">You have selected:</p>
+                    </div>
+                    <div class="content-section bg-white pt-5 pb-2 align-center">
+                        <div class="align-center blue-dark">
+                            <img src="/imgs/plan-dial-ufb-100.svg" alt="" />
+                            <h5 class="p-0 m-0 orange">UFB 100</h5>
+                        </div>
+                        <p>Includes:</p>
+                        <ul class="no-style mb-4">
+                            <li>Unlimited data</li>
+                            <li>100 Mbps down</li>
+                            <li>20 Mbps up</li>
+                        </ul>
+
+                        <div class="price mb-3">
+                            <div>
+                                <span class="orange bold">$<span class="very-large">79</span></span>
+                            </div>
+                            <div class="small">/month</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UFB 900 -->
+            <div class="content-section bg-beige" x-show="plan == 'ufb900'">
+                <div class="badge">
+                    <img src="/imgs/badge-fibre.svg" alt="" />
+                </div>
+                <div class="grid two gap20 middle">
+                    <div>
+                        <a @click="plan = null" class="btn back bg-red">Back</a>
+                        <p class="large bold mb-0">You have selected:</p>
+                    </div>
+                    <div class="content-section bg-white pt-5 pb-2 align-center">
+                        <div class="align-center mb-2">
+                            <img src="/imgs/plan-dial-ufb-900.svg" alt="" />
+                            <h5 class="p-0 m-0 red">UFB 900</h5>
+                        </div>
+                        <p>Includes:</p>
+                        <ul class="no-style mb-4">
+                            <li>Unlimited data</li>
+                            <li>500-900 Mbps down</li>
+                            <li>400-500 Mbps up</li>
+                        </ul>
+
+                        <div class="price mb-3">
+                            <div>
+                                <span class="red bold">$<span class="very-large">109</span></span>
+                            </div>
+                            <div class="small">/month</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pt-7 align-center">
+            <a href="/help/faq/plans">Help! What does this all mean?</a>
+        </div>
+
+    </div>
+</section>

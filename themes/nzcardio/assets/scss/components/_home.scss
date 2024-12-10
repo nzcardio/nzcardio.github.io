@@ -1,0 +1,368 @@
+.hero-arrow {
+    font-size: 40px !important;
+    font-weight: bold;
+}
+
+h4 .icon {
+    max-width: 50px;
+    max-height: 50px;
+
+    position: absolute;
+    right: 0px;
+    top: -10px;
+}
+
+.client-grid {
+    >div {
+        width: 250px;
+        margin: 0 auto 0 auto;
+    }
+
+    img {
+        max-width: 80%;
+        max-height: 60px;
+        width: 100%;
+
+        &.square {
+            height: 100px;
+            width: 100px;
+            max-height: 100px;
+        }
+    }
+}
+
+// triangles
+.arrow {
+
+    h3 {
+        margin-bottom: 10px;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    &-one {
+        z-index: 2;
+        position: relative;
+        background: $red;
+        padding: 30px 20px;
+        border-radius: $border-radius;
+
+        @include for-tablet-landscape-up {
+            position: absolute;
+            bottom: 0px;
+            top: 70px;
+        }
+
+        h5 {
+            border-bottom: 1px solid $white;
+            padding-bottom: 5px;
+        }
+
+        &-down {
+            width: 0;
+            height: 0;
+
+            @include for-tablet-landscape-up {
+                border-top: 30px solid transparent;
+                border-bottom: 30px solid transparent;
+
+                border-left: 30px solid $red;
+                position: absolute;
+                z-index: 0;
+                right: -28px;
+                top: calc(50% - 30px);
+            }
+
+            @include for-phone-only {
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+
+                border-top: 30px solid $red;
+                margin: 0 auto;
+            }
+
+            @include for-tablet-portrait-only {
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+
+                border-top: 30px solid $red;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &-two {
+        z-index: 2;
+        position: relative;
+        background: $blue;
+        padding: 30px 20px;
+        border-radius: $border-radius;
+
+        h5 {
+            border-bottom: 1px solid $white;
+            padding-bottom: 5px;
+        }
+
+        &-down {
+            width: 0;
+            height: 0;
+
+            @include for-tablet-landscape-up {
+                border-top: 30px solid transparent;
+                border-bottom: 30px solid transparent;
+                border-left: 30px solid $blue;
+                position: absolute;
+                z-index: 0;
+                right: -28px;
+                top: calc(50% - 30px);
+            }
+
+            @include for-phone-only {
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+
+                border-top: 30px solid $blue;
+                margin: 0 auto;
+            }
+
+            @include for-tablet-portrait-only {
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+
+                border-top: 30px solid $blue;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &-three {
+        z-index: 2;
+        position: relative;
+        background: $green;
+        padding: 30px 20px;
+        border-radius: $border-radius;
+
+        @include for-tablet-landscape-up {
+            position: absolute;
+            bottom: 0px;
+            top: 70px;
+        }
+
+        h5 {
+            border-bottom: 1px solid $white;
+            padding-bottom: 5px;
+        }
+
+        &-down {
+            width: 0;
+            height: 0;
+            // @include for-tablet-landscape-up {
+            //     border-top: 30px solid transparent;
+            //     border-bottom: 30px solid transparent;
+
+            //     border-left: 30px solid $green;
+            //     position: absolute;
+            //     z-index: 0;
+            //     right: -30px;
+            //     top: calc(50% - 30px);
+            // }
+            // @include for-desktop-up {
+            //     border-top: 30px solid transparent;
+            //     border-bottom: 30px solid transparent;
+
+            //     border-left: 30px solid $green;
+            //     position: absolute;
+            //     z-index: 0;
+            //     right: -30px;
+            //     top: calc(50% - 30px);
+            // }
+            @include for-phone-only {
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+
+                border-top: 30px solid $green;
+                margin: 0 auto;
+            }
+
+            @include for-tablet-portrait-only {
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+
+                border-top: 30px solid $green;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.arrows {
+    display: block;
+
+    @include for-tablet-landscape-up {
+        gap: 40px;
+        display: grid;
+    }
+}
+
+.consult {
+    padding: 30px 20px;
+
+    h5 {
+        border-bottom: 1px solid $black;
+        padding-bottom: 5px;
+    }
+}
+
+.service-grid {
+    img {
+        max-width: 80px;
+        margin: 0 auto 0 0;
+    }
+
+    h4 {
+        margin-bottom: 10px;
+        padding-top: 5px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li::before {
+        content: "•";
+        color: $blue;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em
+    }
+}
+
+.bio {
+    height: 400px;
+    background: url('/imgs/tauranga.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.proceedure-block {
+    position: relative;
+    // background: $blue-dark url('/imgs/tauranga.jpg') no-repeat center bottom;
+
+    // &:before {
+    //     z-index: -1;
+    //     position: absolute;
+    //     bottom: 0;
+    //     content: url('/imgs/half_cirlce_plus.png');
+    //     opacity: 0.4;
+    // }
+}
+
+.mugshot {
+    background: $block-alt-bg;
+    background: radial-gradient(circle, $block-color 8%, $block-alt-bg 70%);
+
+    > div {
+        background: url('/imgs/mugshot.png') no-repeat center bottom;
+        background-size: cover;
+        height: 100%;
+        min-height: 360px;
+    }
+}
+
+.quote {
+    // background: $white-off url('/imgs/woman-with-child.jpg') no-repeat center -200px;
+    background: $white-off url('/imgs/happy-couple.jpg') no-repeat -400px -100px;
+    background-size: cover;
+    margin: 0;
+    padding: 400px var(--spacing-2) var(--spacing-6) var(--spacing-2);
+    // height: 90vh;
+
+    > div {
+        max-width: $max-width;
+        margin: 0 auto;
+
+        blockquote {
+            width: 80%;
+            margin: 0 auto;
+
+            @include for-tablet-portrait-up {
+                margin: 60px 0 60px auto;
+                width: 60%;
+            }
+        
+            @include for-tablet-landscape-up {
+                width: 35%;
+            }
+        }
+    }
+
+    @include for-tablet-portrait-up {
+        background: url('/imgs/happy-couple.jpg') no-repeat -150px 0px;
+        background-size: cover;
+        padding: var(--spacing-6) var(--spacing-2);
+    }
+
+    @include for-tablet-landscape-up {
+        background: url('/imgs/happy-couple.jpg') no-repeat center -200px;
+    }
+}
+
+.quote2 {
+    // background: $white-off url('/imgs/woman-with-child.jpg') no-repeat center -200px;
+    background: $white-off url('/imgs/couple-walking.jpg') no-repeat -650px top;
+    background-size: cover;
+    margin: 0;
+    padding: 200px var(--spacing-2) 200px var(--spacing-2);
+    // height: 90vh;
+
+    >div {
+        max-width: $max-width;
+        margin: 0 auto;
+
+        blockquote {
+            width: 80%;
+            margin: 0 auto;
+
+            @include for-tablet-portrait-up {
+                margin: 60px auto 60px auto;
+                width: 60%;
+            }
+
+            @include for-tablet-landscape-up {
+                margin: 60px auto 60px auto;
+                width: 35%;
+            }
+        }
+    }
+
+    @include for-tablet-portrait-up {
+        background: url('/imgs/couple-walking.jpg') no-repeat center 0px;
+        background-size: cover;
+        padding: var(--spacing-6) var(--spacing-2);
+    }
+
+    @include for-desktop-up {
+        background: url('/imgs/couple-walking.jpg') no-repeat center -100px;
+    }
+}
+
+.working-with {
+    @include for-phone-only {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+.uni-logos {
+    text-align: center;
+    > div {
+        padding: 20px;
+        display: grid;
+        gap: 20px;
+        background: $white-off;
+        border-radius: $border-radius;
+
+        img {
+            max-width: 275px;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+<section class="hero">
+    <!-- <div class="pulse animated fadeOut delay-1s"></div> -->
+    <div class="animated fadeIn" id="hero-bg" style="background-image: url({{ .fullImage  }});">
+        <!-- <div class="align-center" id="hero-bg" style="background: #1b1b1e url({{ .fullImage  }}) no-repeat center center;"> -->
+        <div class="hero-content">
+            <div class="animated ml-auto">
+                <!-- <div class="align-center icon py-2 yellow"><i class="fas fa-street-view"></i></div> -->
+                <div class="pb-2 text-left">
+                    {{/* <div class="icon"><i class="lni lni-first-aid"></i></div> */}}
+                    <div class="icon">
+                        <svg class="icon">
+                            <use href="/imgs/icons.svg#logo-icon"></use>
+                        </svg>
+                    </div>
+                    <h1 class="font-logo mb-2">{{ .title }}</h1>
+                    <div class="grid two force gap3" style="--columns:1fr auto">
+                        <div class="tag-line large mb-0">{{ .tagline }}</div>
+                        <div><small class="x-small mb-0">MB ChB FRACP</small></div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div id="hero-arrow" class="animated fadeIn delay-3s center white">
+                <h5 class="mb-0">Here's how</h5><br/>
+                <i class="lni lni-arrow-down hero-arrow animated bounce delay-4s"></i>
+            </div> -->
+        </div>
+    </div>
+</section>

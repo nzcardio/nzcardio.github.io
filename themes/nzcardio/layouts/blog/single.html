@@ -1,0 +1,43 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{end}}
+
+{{ define "content" }}
+
+<section class="page">
+    <div class="container content-narrow">
+        <img class="mb-4" src="{{ .Params.Image }}" alt="blog-image">
+
+        <div class="mb-2">
+            <h1 class="mb-0">{{ .Title }}</h1>
+            <div class="blog-profile">
+              <!-- - <a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.Author }}</a> -->
+              <div><a href="/#team"><img src="/imgs/team/{{ lower (replace .Params.Author " " "-") }}.png" alt="profile pic" /></a></div>
+              <div>
+                <a href="/#team">{{ .Params.Author }}</a><br/>
+                <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+              </div>
+              
+            </div>
+        </div>
+        
+        {{ .Content }}
+        
+        {{ if .Site.Params.post_share }}
+        {{ partial "post-share.html" . }}
+        {{ end }}
+
+        
+
+          <!-- comments -->
+          <div class="mt-5">
+            {{ template "_internal/disqus.html" . }}
+          </div>
+      
+          <hr/>
+          <div class="pt-4">
+            <a href="/blog" class="btn"><i class="lni lni-arrow-left"></i> Back</a>
+          </div>
+        
+    </div>
+</section>
+
+{{ end }}

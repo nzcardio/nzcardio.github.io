@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analitycs_id }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', '{{ .Site.Params.google_analitycs_id }}');
+    </script>
+
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="keywords" content="{{ .Site.Params.keywords }}">
+
+    <!-- Social cards -->
+    <meta property="og:url" content="{{.Site.BaseURL}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta property="og:description" content="{{ .Site.Params.description }}" />
+    <meta property="og:image" content="{{.Site.BaseURL}}/imgs/social-a-16x9.png" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="{{.Site.BaseURL}}" />
+    <meta name="twitter:title" content="{{ .Site.Title }}" />
+    <meta name="twitter:description" content="{{ .Site.Params.description }}" />
+    <meta name="twitter:image" content="{{.Site.BaseURL}}/imgs/social-a-16x9.png" />
+
+    <!-- css -->
+    {{ if hugo.IsServer }}
+    {{ $cssOpts := (dict "targetPath" "css/styles.css" "enableSourceMap" true ) }}
+    {{ $styles := resources.Get "scss/styles.scss" | resources.ExecuteAsTemplate "style.styles.css" . | toCSS $cssOpts
+    }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
+    {{ else }}
+    {{ $cssOpts := (dict "targetPath" "css/styles.css" ) }}
+    {{ $styles := resources.Get "scss/styles.scss" | resources.ExecuteAsTemplate "style.coder.css" . | toCSS $cssOpts |
+    minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"
+        crossorigin="anonymous" media="screen" />
+    {{ end }}
+
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_32 | default " /imgs/favicon-32x32.png" | absURL }}"
+        sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_16 | default " /imgs/favicon-16x16.png" | absURL }}"
+        sizes="16x16">
+
+    <!-- js framework     -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <!-- animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <script src="/js/scripts.js"></script>
+</head>
+
+<body>
+    {{- partial "header.html" . -}}
+    <div>
+        {{- block "content" . }}{{- end }}
+    </div>
+    {{- partial "footer.html" . -}}
+
+    <!-- icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

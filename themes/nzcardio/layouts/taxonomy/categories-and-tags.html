@@ -1,0 +1,22 @@
+<div class="p-4 categories-and-tags">
+    <div>
+        <h4 class="border-bottom-white mb-4"><i class="far fa-folder-open" title="Categories"></i> Categories</h4>
+        <div class="mb-4">
+            
+            {{ range $i, $e := .Site.Taxonomies.categories }}
+            
+            <span class="separator">•</span>
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a> 
+            {{ end }}
+        </div>
+
+        <h4 class="border-bottom-white mb-4"><i class="fas fa-tags" title="Tags"></i> Tags</h4>
+        <div class="mb-4">
+            {{ range .Site.Taxonomies.tags }}
+            <span class="separator">•</span>
+            <a href="{{ .Page.Permalink }}">#{{ .Page.Title | title }}</a>
+            {{ end }}
+        </div>
+    </div>
+</div>
+<hr class="phone-only" />

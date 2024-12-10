@@ -1,0 +1,78 @@
+// https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.strm50jhk
+@mixin for-phone-only {
+    @media screen and (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-only {
+    @media screen and (min-width: 600px) and (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media screen and (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media screen and (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media screen and (min-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media screen and (min-width: 1800px) {
+        @content;
+    }
+}
+
+.for-phone-only {
+    display: none;
+    @include for-phone-only {
+        display: block;
+    }
+}
+
+.for-tablet-portrait-only {
+    display: none;
+    @include for-tablet-portrait-only {
+        display: block;
+    }
+}
+
+.for-tablet-portrait-up{
+    display: none;
+    @include for-tablet-portrait-up {
+        display: block;
+    }
+}
+
+.for-tablet-landscape-up  {
+    display: none;
+    @include for-tablet-landscape-up  {
+        display: block;
+    }
+}
+
+.for-desktop-up {
+    display: none;
+    @include for-desktop-up  {
+        display: block;
+    }
+}
+
+.for-big-desktop-up {
+    display: none;
+    @include for-big-desktop-up  {
+        display: block;
+    }
+}

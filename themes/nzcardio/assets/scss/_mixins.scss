@@ -1,0 +1,94 @@
+@mixin border-radius-single($size, $corner){
+    -webkit-border-#{$corner}-radius: $size;
+    -moz-border-#{$corner}-radius: $size;
+    border-#{$corner}-radius: $size;
+}
+
+@mixin border-radius($size){
+    -webkit-border-radius: $size;
+    -moz-border-radius: $size;
+    border-radius: $size;
+}
+
+@mixin calc($property, $expression){
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: -o-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+@mixin transparency($amount) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{($amount*100)})";
+  filter: alpha(opacity=($amount*100));
+  -moz-opacity: $amount;
+  -khtml-opacity: $amount;
+  opacity: $amount;
+}
+
+@mixin rotate($number){
+    -webkit-transform: rotate(#{$number}deg);
+    -moz-transform: rotate(#{$number}deg);
+    -o-transform: rotate(#{$number}deg);
+    transform: rotate(#{$number}deg);
+    position: absolute;
+}
+
+@mixin inner-glow($blur, $color){
+    -webkit-box-shadow: inset 0 0 $blur $color;
+    -moz-box-shadow: inset 0 0 $blur $color;
+    box-shadow: inset 0 0 $blur $color;
+}
+
+@mixin outer-glow($blur, $color){
+    -webkit-box-shadow: 0 0 $blur $color;
+    -moz-box-shadow: 0 0 $blur $color;
+    box-shadow: 0 0 $blur $color;
+}
+
+@mixin box-shadow($x, $y, $blur, $color){
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+}
+
+@mixin btn-background($color, $percent){
+    background-color: $color;
+    cursor: pointer;
+
+    &:hover {
+        background: shade($color, $percent);
+    }
+
+    &.is-disabled:hover {
+        background-color: $color;
+    }
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+  -moz-box-sizing: $box-model; // Firefox <= 19
+  box-sizing: $box-model;
+}
+
+/* Styling placehoder text */
+@mixin placeholder {
+  &.placeholder { @content }
+  &:-moz-placeholder { @content }
+  &::-webkit-input-placeholder { @content }
+}
+
+@mixin filter($filter-type,$filter-amount) {
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}

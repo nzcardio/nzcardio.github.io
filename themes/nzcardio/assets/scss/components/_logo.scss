@@ -1,0 +1,32 @@
+.logo-block {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 20px;
+    
+    .icon-wrapper {
+        padding-top: 10px;
+        color: $hero-icon;
+
+        .icon {
+            max-width: 50px;
+            max-height: 50px;
+        }
+    }
+
+    .title {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 28px;
+        color: $hero-color;
+    }
+
+    .tag-line {
+        font-size: 13.5px;
+        color: $hero-color;
+    }
+
+    .creds {
+        font-size: 11px;
+    }
+}

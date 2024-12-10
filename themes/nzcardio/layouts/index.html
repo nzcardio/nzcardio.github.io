@@ -1,0 +1,9 @@
+{{ define "title" }}
+    Home  | {{ .Site.Title }}
+{{end}}
+
+{{ define "header" }}{{ partial "header.html" . }}{{ end }}
+
+{{ define "content" }}{{ partial "home.html" . }}{{ end }}
+
+{{ define "footer" }}{{ partial "footer.html" . }}{{ end }}

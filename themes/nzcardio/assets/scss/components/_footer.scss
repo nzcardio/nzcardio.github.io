@@ -1,0 +1,118 @@
+ html {
+     body {
+         >footer {
+             position: relative;
+             background: $page-footer-bg;
+             color: $page-footer-color;
+
+             .copywrite {
+                 background: $page-footer-bg;
+                 color: $page-footer-color;
+             }
+
+             // overflow: hidden;
+             // padding: 70px 20px;
+             // @include for-phone-only {
+             //     text-align: center;
+             // }
+
+             a {
+                 color: $page-footer-link-color;
+
+                 &:hover {
+                     color: $page-footer-link-hover-color;
+                 }
+             }
+
+             .card.bg-blue-dark address a:hover {
+                color: $white;
+             }
+
+             .footer-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+
+                @include for-tablet-portrait-up {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                @include for-tablet-landscape-up {
+                    grid-template-columns: 1fr 2fr;
+                }
+
+             }
+
+             >div.container {
+                // @include for-tablet-landscape-up {
+                //     width: 100%;
+                // }
+
+                 >div {
+                     max-width: $max-width;
+
+                     margin: 0 auto;
+
+                     ul {
+                         list-style: none;
+
+                         li {
+                             margin: 0;
+                         }
+                     }
+
+                     .follow a {
+                         margin-right: 5px;
+                     }
+                 }
+             }
+         }
+     }
+
+     .copyright {
+         margin-top: -7px;
+         z-index: 100;
+         position: relative;
+         background: $page-footer-banner;
+         color: $page-footer-banner-color;
+     }
+
+     .popup {
+        padding: 40px;
+        border: 0 none;
+        min-width: 50%;
+        align-items: center;
+        justify-content: center;
+        margin: calc(50vh - 220px) auto 0;
+        overflow: hidden;
+        background: $block-alt-bg;
+        color: $block-alt-color;
+
+        @include for-phone-only {
+            
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            right: 0px;
+            width: calc(100vw - 90px);
+        }
+
+        > button {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            padding: 3px;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &::backdrop {
+            background: rgba(255, 255, 255, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+     }
+ }

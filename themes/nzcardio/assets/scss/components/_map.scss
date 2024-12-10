@@ -1,0 +1,30 @@
+.map_wrapper {
+    position: relative;
+    overflow: hidden;
+    max-width: 90vw;
+    border-radius: $border-radius;
+    background: $white-off;
+    margin: 0 auto;
+
+    min-height: 400px;
+
+    @include for-tablet-landscape-up {
+        position: inherit;
+    }
+
+    .map {
+        height: 400px;
+        // height: 90vh;
+        // width: 90vw;
+        // height: 400px;
+        // position: absolute;
+        // top: 0px;
+        // bottom: 0px;
+        // right: 0px;
+        // left: 0;
+        //     @include for-tablet-landscape-up {
+        //         width: 50%;
+        //         left: auto;
+        //     }
+    }
+}

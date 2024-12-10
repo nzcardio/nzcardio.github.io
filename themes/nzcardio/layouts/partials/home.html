@@ -1,0 +1,170 @@
+{{ partial "components/hero" (dict "title" "Dr Sergej Cicovic" "tagline"
+"Cardiology and Cardiac Interventions" "fullImage"
+"/imgs/hero.png") }}
+
+<section class="content content-block-alt animated fadeIn">
+    <div class="">
+        <div class="container">
+            {{/* <div class="text-center" style="font-size: 60px"><i class="lni lni-pulse"></i></div>
+            <h2 id="about" class="scroll-offset">About</h2> */}}
+            <div class="content mx-auto grid two gap4 col-gap" style="--columns: 1fr 40%;">
+                <div class="mb-2">
+                    <h2 class="yellow">About</h2>
+                    <p>
+                        Dr Sergej Cicovic is a New Zealand trained specialist in Cardiology and Cardiac Interventions. He grew up in Auckland
+                        and completed his studies at the University of Auckland. After graduating he completed his cardiology training, being
+                        awarded a Fellowship of the Royal Australasian College of Physicians.
+                    </p>
+                    <p>
+                        Sergej undertook his subspeciality training Auckland, North Shore, and Middlemore hospital before being accepted at the
+                        prestigious Toronto General Hospital, becoming the first formally trained Cardiac High-risk Interventionalist in Canada
+                        and New Zealand and helping to develop this new field. He has built an expertise in advanced treatments for coronary
+                        artery disease along with management of critically unwell patients.
+                    </p>
+                    
+                    <p>
+                        He is a Interventional Cardiologist at Auckland City Hospital and a Honorary Lecturer at the University of Auckland. He
+                        has been an author of several publications and has been a speaker at multiple international conferences.
+                    </p>
+                    
+                </div>
+
+                <div class="uni-logos mb-2 pt-3">
+                    <i data-lucide="graduation-cap" class="icon-big"></i>
+                    <div>
+                        <div><img src="/imgs/logo-university-of-auckland.png" alt="" /></div>
+                        <div><img src="/imgs/logo-royal-australasian-college-of-physicians.png" alt="" /></div>
+                        <div><img src="/imgs/logo-university-of-toronto.png" alt="" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="quote content-block">
+    <div class="py-10">
+        
+        <blockquote>Identifying and treating a problem quickly means that patients can start feeling better and get back to enjoying life.</blockquote>
+    </div>
+</section>
+
+<section class="animated content-block fadeIn">
+    <div class="container">
+        <!-- <h2 class="mb-4">Working with</h2> -->
+        <div class="grid four middle text-center gap2 working-with">
+            <div>
+                <a href="https://ascotangiography.co.nz/" target="_blank"><img src="/imgs/logo-ascot-angiography.png" alt="Ascot Cardiology" /></a>
+            </div>
+
+            <div>
+                <a href="https://ascotcardiologygroup.co.nz/" target="_blank"><img src="/imgs/logo-ascot-cardiology-group.svg" alt="Ascot Angiography" /></a>
+            </div>
+
+            <div>
+                <a href="https://www.nib.co.nz/" target="_blank" style="fill: rgb(20, 74, 56)"><svg x="0" y="0" width="128px" height="42.67px" viewBox="0 0 105.5 35.1" aria-label="NIB" role="img"
+                    data-mesh-component="LOGO">
+                    <g>
+                        <path
+                            d="M62.2 11.2C61.3 10.3 60.3 9.6 59 9.1 57.8 8.6 56.4 8.3 54.9 8.3 53.1 8.3 51.5 8.6 50.2 9.3 48.9 10 48 10.7 47.3 11.4V8.7H40.4V34.7H47.4V20.5C47.4 18.7 47.9 17.3 49 16.2 50 15.2 51.4 14.7 53.2 14.7 54.7 14.7 55.9 15.2 56.7 16.1 57.5 17.1 57.9 18.3 57.9 19.9V34.7H64.9V18.7C64.9 17.1 64.7 15.7 64.2 14.4 63.8 13.2 63.1 12.1 62.2 11.2ZM74.8 8.7H67.8V34.7H74.8V8.7ZM74.8 0H67.8V6.5H74.8V0ZM104.4 16.6C103.7 15 102.7 13.5 101.6 12.3 100.4 11.1 99 10.2 97.4 9.5 95.8 8.8 94.1 8.5 92.4 8.5 90.9 8.5 89.5 8.7 88.2 9.1 86.9 9.5 85.7 10.1 84.8 10.8V0H77.8V34.7H84.8V32.8C85.7 33.5 86.8 34.1 88.2 34.5 89.5 34.9 90.9 35.1 92.4 35.1 94.2 35.1 95.8 34.8 97.4 34.1 99 33.4 100.4 32.5 101.6 31.3 102.8 30.1 103.7 28.7 104.4 27.1 105.1 25.5 105.5 23.7 105.5 21.9 105.5 20 105.1 18.2 104.4 16.6ZM98.1 24.6C97.7 25.4 97.3 26.2 96.7 26.8 96.1 27.4 95.4 27.9 94.5 28.3 93.7 28.7 92.8 28.8 91.8 28.8 90.8 28.8 89.8 28.6 89 28.3 88.1 27.9 87.4 27.4 86.7 26.8 86.1 26.2 85.6 25.4 85.2 24.6 84.8 23.8 84.7 22.8 84.7 21.9 84.7 21 84.9 20 85.3 19.2 85.7 18.3 86.2 17.6 86.8 17 87.4 16.4 88.2 15.9 89.1 15.5 90 15.1 90.9 14.9 91.9 14.9 92.8 14.9 93.7 15.1 94.6 15.5 95.4 15.9 96.2 16.4 96.8 17 97.4 17.6 97.9 18.4 98.2 19.2 98.6 20.1 98.7 21 98.7 21.9 98.6 22.8 98.4 23.7 98.1 24.6ZM0 14.1V20.6H9.6L2.8 27.4 7.4 31.9 14.1 25.1V34.7H20.6V14.1H0ZM12.6 12.6V8L7.4 2.8 2.8 7.4 8 12.6H12.6ZM22.1 22.1V26.7L27.4 31.9 31.9 27.4 26.7 22.1H22.1ZM31.9 7.4 27.4 2.8 22.1 8V12.6H26.7L31.9 7.4ZM27.4 14.1 24.1 17.4 27.4 20.6H34.7V14.1H27.4ZM14.1 7.4 17.4 10.6 20.6 7.4V0H14.1V7.4Z"
+                            class="sc-cCsOjp cxwdLW"></path>
+                    </g>
+                </svg></a>
+            </div>
+
+            <div>
+                <a href="https://www.southerncross.co.nz" target="_blank"><img src="/imgs/logo-southen-cross.svg" alt="Southern Cross logo" /></a>
+            </div>
+ 
+        </div>
+
+    </div>
+</section>
+
+<section class="animated content-block-alt fadeIn proceedure-block">
+    <div class="container">
+        <h2 id="services" class="scroll-offset yellow">Services</h2>
+        <div class="grid two gap4 col-gap">
+            <div class="py-2">
+                <h4>Cardiovascular risk assessment <br/><small>(Blood pressure, lipid disorders)</small></h4>
+                <div class="grid two middle force" style="--columns: auto 1fr">
+                    <div><i data-lucide="syringe" class="icon-big"></i></div>
+                    <ul class="mb-0">
+                        <li>Holistic assessment of cardiac risk factors</li>
+                        <li>Personalised approach to reduce your cardiac disease risk</li>
+                        <li>In office or at home testing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="py-2">
+                <h4>Chest pain</h4>
+                <div class="grid two middle force" style="--columns: auto 1fr">
+                    <div><i data-lucide="stethoscope" class="icon-big"></i></div>
+                    <ul class="mb-0">
+                        <li>State of the art equipment and techniques to assess chest pain.</li>
+                        <li>Experienced team to guide you through angiography and stenting</li>
+                        <li>Follow up after investigations and treatments</li>
+                    </ul>
+                </div>
+            </div>
+                
+            <div class="py-2">
+                <h4>Palpitations and blackouts</h4>
+                <div class="grid two middle force" style="--columns: auto 1fr">
+                    <div><i data-lucide="activity" class="icon-big"></i></div>
+                    <ul class="mb-0">
+                        <li>In office and at home investigations for common arrhythmias</li>
+                        <li>All modern treatment modalities offered.</li>
+                        <li>Holistic approach with multi-disciplinary team</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="py-2">
+                <h4>Heart murmurs</h4>
+                <div class="grid two middle force" style="--columns: auto 1fr">
+                    <div><i data-lucide="heart-pulse" class="icon-big"></i></div>
+                    <ul class="mb-0">
+                        <li>Investigation of valvular heart conditions</li>
+                        <li>Treatment heart valve conditions with a variety of minimally invasive options</li>
+                        <li>Post operative follow up after treatment</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="py-2">
+                <h4>Heart failure</h4>
+                <div class="grid two middle force" style="--columns: auto 1fr">
+                    <div><i data-lucide="briefcase-medical" class="icon-big"></i></div>
+                    <ul class="mb-0">
+                        <li>Investigation of Shortness of breath</li>
+                        <li>Tailored treatment of heart failure</li>
+                        <li>Multidisciplinary approach to care</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="py-2">
+                <h4>Athlete and Employment medicals</h4>
+                <div class="grid two middle force" style="--columns: auto 1fr">
+                    <div style="font-size: 52px"><i data-lucide="clipboard-list" class="icon-big"></i></div>
+                    <ul class="mb-0">
+                        <li>Full diagnostic capability for peace of mind</li>
+                        <li>Assessment of high-performance athletes</li>
+                        <li>Family screening for cardiac disease</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="quote2 content-block">
+    <div class="py-10">
+
+        <blockquote>It is a great privilege and responsibility to be part of a patients care, especially to help guide
+            and advise them at a
+            time of need.</blockquote>
+    </div>
+</section>

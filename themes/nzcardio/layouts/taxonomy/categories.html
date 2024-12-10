@@ -1,0 +1,9 @@
+<div class="categories small">
+  <i class="far fa-folder-open" title="Categories"></i>
+  {{- range $index, $el := . -}}
+    {{- if gt $index 0 }}
+      <span class="separator">•</span>
+    {{- end }}
+    <a href="{{ ( printf "categories/%s/" ( . | urlize ) ) | relLangURL }}">{{ . | title}}</a>
+  {{- end -}}
+</div>

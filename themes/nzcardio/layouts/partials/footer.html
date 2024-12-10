@@ -1,0 +1,120 @@
+<footer x-data="{ open: 0 }">
+    <div class="item-center container pb-0">
+
+        <div class="footer-grid">
+            <div>
+                <h2 id="contact" class="underline">Contact</h2>
+                
+                <!-- <div class="x-large follow">
+                    {{ with .Site.Menus.social}}
+                        {{ range sort . }}
+                            {{  if .URL }}
+                                <a href="{{ .URL | absLangURL }}" target="_blank"><i class="{{ .Name }}"></i></a>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </div> -->
+
+                <div class="mb-4">
+                    <div>
+                        <div class="grid two force middle gap2 mb-2" style="--columns: auto 1fr">
+                            <div><i data-lucide="store"></i></div>
+                            <div>Mon - Fri, 8am to 5pm weekdays</div>
+                        </div>
+
+                        <div class="grid two force middle gap2 mb-2" style="--columns: auto 1fr">
+                            <div><i data-lucide="phone"></i></div>
+                            <div>
+                                <a href="tel:+6495209540" class="blue-dark">+64 (09) 520 9540</a>
+                            </div>
+                        </div>
+                        
+                        <div class="grid two force middle gap2 mb-2" style="--columns: auto 1fr">
+                            <div><i data-lucide="map-pin-house"></i></div>
+                            <div>
+                                <address>
+                                    <!-- Ascot Integrated Hospital 3rd Floor, East, Auckland 1051 -->
+                                    Ascot Hospital, Level 3<br />
+                                    90 Greenlane East<br />
+                                    Remuera, Auckland 1051
+                                </address>
+                            </div>
+                        </div>
+
+                        <div class="grid two force middle gap2 mb-2" style="--columns: auto 1fr">
+                            <div><i data-lucide="message-circle-heart"></i></div>
+                            <div>
+                                <button class="btn" popovertarget="contact-form">Contact us or book an appointment</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-2">
+
+                    <div class="map_wrapper">
+                        <div class="map">
+                            <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
+                                referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCkfWWJRx_OrE5FbK-kcK6sTwHLD93LKfs&zoom=15&q=Ascot+Hospital+90+Greenlane+East+Remuera+Auckland+1051">
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="popup card animated fadeIn" popover id="contact-form">
+    <button popovertarget="contact-form" popovertargetaction="hide"><i data-lucide="x"></i></button>
+    <form id="contactform" action="https://staticcontact.com/send/3af146b8-f72a-49e5-b54b-3b3895ca4982" method="post" class=""
+        x-data="{type:'contact'}">
+        <div class="radio-buttons mb-2">
+            <div><label :class="type=='contact' ? 'selected':''">
+                <input type="radio" name="type" value="contact" x-model="type">Contact us <!-- <span
+                    x-show="type=='contact'"><i data-lucide="check"
+                        class="icon-small animated fadeIn faster"></i></span> -->
+            </label></div>
+            <div><label :class="type=='appointment' ? 'selected':''">
+                <input type="radio" name="type" value="appointment" x-model="type">Book an appointment <!-- <span
+                    x-show="type=='appointment'"><i data-lucide="check"
+                        class="icon-small animated fadeIn faster"></i></span> -->
+            </label>
+            </div>
+        </div>
+
+        <div class="grid two mb-1">
+            <div>
+                <label for="name">Name <span class="red">*</span></label>
+                <input type="text" name="name" autofocus required />
+            </div>
+            <div>
+                <label for="name">Email <span class="red">*</span></label>
+                <input type="text" name="email" required />
+            </div>
+        </div>
+
+        <div x-show="type=='appointment'" class="animated fadeIn mb-1 grid two">
+            <div>
+                <label for="name">Phone</label>
+                <input type="text" name="phone" />
+            </div>
+            <div>
+                <label for="name">Preferred date</label>
+                <input type="date" name="date" />
+            </div>
+        </div>
+
+        <label for="message">Message <span class="red">*</span></label>
+        <textarea name="message" class="mb-2" rows="8" required></textarea>
+
+        <button type="submit">Submit</button>
+        <script src="https://staticcontact.com/js/static_contact_botbuster.js"></script>
+    </form>
+</div>
+
+<div class="align-center copyright small p-2"> &copy; {{ now.Format "2006"}} {{ .Site.Params.legal_title }}. All
+    rights reserved.</div>

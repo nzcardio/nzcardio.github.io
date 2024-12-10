@@ -1,0 +1,34 @@
+/**
+ * CSS CONFIG FILE
+ */
+
+// fonts and colors
+// are imported in _styles.css
+
+// content limit
+$max-width: 1300px;
+$max-width-narrow: 960px;
+
+// borders 
+$border-radius: 6px;
+
+// sizes
+:root {
+    // spacing
+    --spacing-0: 0;
+    --spacing-1: 10px;
+    --spacing-2: 20px;
+    --spacing-3: 30px;
+    --spacing-4: 40px;
+    --spacing-5: 50px;
+    --spacing-6: 60px;
+    --spacing-7: 70px;
+    --spacing-8: 80px;
+    --spacing-9: 90px;
+    --spacing-10: 100px;
+    --spacing-11: 110px;
+    --spacing-12: 120px;
+    --spacing-13: 130px;
+    --spacing-14: 140px;
+    --spacing-15: 150px;
+}

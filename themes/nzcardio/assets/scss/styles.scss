@@ -1,0 +1,32 @@
+// colour options
+@import "palettes/palette1"; // dark blue + yellow - Literata
+// @import "palettes/palette2"; //  dark blue+yellow - Playfair Display-Inter - Mayo
+// @import "palettes/palette3"; // dark blue+yellow - poppins
+
+
+// settings & utility
+@import "var"; // holds sites varibles
+@import "mixins";
+@import "breakpoints";
+
+// layout
+@import "base"; // base elements
+@import "layout"; // base layout
+@import "utility"; // margins, padding, etc
+@import "text"; // margins, padding, etc
+@import "forms";
+@import "components";
+
+// components
+@import "components/header";
+@import "components/footer";
+@import "components/hero";
+@import "components/home";
+@import "components/landing";
+@import "components/card";
+@import "components/masonary";
+@import "components/map";
+@import "components/logo";
+
+// pages
+@import "pages/procedures";

@@ -1,0 +1,45 @@
+.procedure {
+    @include for-phone-only {
+        >div:first-child {
+            order: 2;
+        }
+
+        >div:last-child {
+            order: 1;
+        }
+    }
+
+    ul.procedure-menu {
+
+        li {
+            margin: 0;
+            padding: 0;
+
+            a {
+                color: $white;
+                display: grid;
+                grid-template-columns: 1fr auto;
+                align-items: center;
+                padding: 10px 15px;
+                @include transition(background-color 200ms ease-out 0.1s);
+                border-radius: $border-radius;
+
+                &:hover {
+                    background: $blue;
+                }
+
+                &.selected {
+                    background: $blue;
+
+                }
+            }
+        }
+    }
+
+    img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        margin: 20px auto;
+    }
+}

@@ -1,0 +1,36 @@
+<div class="card bg-grey-dark white">
+    <ul class="grid one gap1 middle no-style procedure-menu mb-0">
+        <li>
+            <a href="/procedures/laparoscopic-hernia" {{ if eq (.Get 0) "laparoscopic-hernia" }}class="selected" {{ end
+                }}>Laparoscopic inguinal hernia repair
+                <svg class="icon">
+                    <use href="/imgs/icons.svg#arrow_right"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="/procedures/laparoscopic-hernia-complications" {{ if eq (.Get 0) "complications" }}class="selected"
+                {{ end }}>Complications
+                <svg class="icon">
+                    <use href="/imgs/icons.svg#arrow_right"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="/procedures/laparoscopic-hernia-recovery" {{ if eq (.Get 0) "recovery" }}class="selected" {{ end
+                }}>Recovery
+                <svg class="icon">
+                    <use href="/imgs/icons.svg#arrow_right"></use>
+                </svg>
+            </a>
+        </li>
+        {{/* <li>
+            <a href="/procedures/laparoscopic-hernia-mesh-controversy" {{ if eq (.Get 0) "mesh-controversy"
+                }}class="selected" {{ end }}>Mesh Controversy
+                <svg class="icon">
+                    <use href="/imgs/icons.svg#arrow_right"></use>
+                </svg>
+            </a>
+        </li> */}}
+    </ul>
+</div>

@@ -1,0 +1,207 @@
+.font-title {
+    font-family: $font-title;
+}
+
+.font-logo {
+    font-family: $font-logo;
+}
+
+/*  Alignment */
+// ------------------------
+.align-left,
+.text-left {
+    text-align: left;
+}
+
+.align-center,
+.text-center {
+    text-align: center;
+}
+
+.align-right,
+.text-right {
+    text-align: right;
+}
+
+.mobile-text-center {
+    @include for-phone-only {
+        text-align: center;
+    }
+}
+
+/*  size */
+// ------------------------
+.quote {
+    font-size: 22px;
+    margin: 0 5px;
+}
+
+.very-large {
+    font-size: 3.052em;
+
+    @include for-phone-only {
+        font-size: 2em;
+    }
+}
+
+.xx-large {
+    font-size: xx-large;
+
+    @include for-phone-only {
+        font-size: large;
+    }
+}
+
+.x-large {
+    font-size: x-large;
+}
+
+.large {
+    font-size: large;
+}
+
+.medium {
+    font-size: medium;
+}
+
+.small {
+    font-size: small;
+}
+
+.x-small {
+    font-size: x-small;
+}
+
+.xx-small {
+    font-size: xx-small;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+// colors
+// ------------------------
+.white {
+    color: $white;
+}
+
+.white-off {
+    color: $white-off;
+}
+
+.grey {
+    color: $grey-2;
+}
+
+.black {
+    color: $black;
+}
+
+.blue-dark {
+    color: $blue-dark;
+}
+
+.blue-darker {
+    color: $blue-darker;
+}
+
+.blue {
+    color: $blue;
+}
+
+.purple {
+    color: $purple;
+}
+
+.red {
+    color: $red;
+}
+
+.orange {
+    color: $orange;
+}
+
+.yellow {
+    color: $yellow;
+}
+
+.green {
+    color: $green;
+}
+
+.mint {
+    color: $mint;
+}
+
+.aqua {
+    color: $aqua
+}
+
+.pink {
+    color: $pink
+}
+
+.beige {
+    color: $beige;
+}
+
+.brown {
+    color: $brown;
+}
+
+// icons
+.text-middle {
+    vertical-align: middle;
+}
+
+a .icon,
+button .icon {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.icon-big {
+    width: 45px;
+    height: 45px;
+    color: $icon-big;
+}
+
+.icon-very-big {
+    width: 65px;
+    height: 65px;
+    color: $icon-big;
+}
+
+.icon-small {
+    width: 14px;
+    height: 14px;
+}
+// Rotations
+.text-rotate-180 {
+    rotate: 180deg;
+    display: inline-block;
+}
+
+// columns
+.two-columns {
+    column-count: 1;
+
+    @include for-tablet-portrait-up {
+        column-count: 2;
+        column-gap: 2.5em;
+    }
+}
+
+// transform
+.capitalize {
+    text-transform: capitalize;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}

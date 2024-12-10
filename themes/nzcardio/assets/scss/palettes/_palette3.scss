@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
+$font-title: 'Poppins', serif;
+$font-body: 'Open sans', sans-serif;
+$font-logo: 'Poppins', serif;
+
+$black: #001514;
+$white: #fff;
+$white-off: #FCF7F8;
+
+$grey-1: #f4f4f4;
+$grey-2: #e1dad8;
+$grey-3: #8f8389;
+$grey-4: #363537;
+$grey-5: #2D3142;
+
+$yellow: #E28413; // EFA00B
+$orange: #F46036;
+$orange-dark: #D7263D;
+$red: #DB162F;
+$red-dark: #832232;
+$pink: #C83E4D;
+$purple: #484D6D;
+$blue-darker: #022050;
+$blue-dark: #08415C; // 190E4F
+$blue: #7CB4B8; // 0267C1 / 0075C4 / 08BDBD
+$aqua: #70F8BA;
+$mint: #78BC61;
+$green: #136F63;
+$green-dark: #218380;
+$beige: #c59b76;
+$brown: #4F270D;
+
+// Link states
+$link: $yellow;
+$hover: $orange;
+
+$link-light: $blue;
+$link-light-hover: $blue-dark;
+
+$button-primary: $link;
+$button-primary-hover: $hover;
+
+// header
+$page-header-bg: $white;
+$page-header-color: $black;
+$page-header-link-color: $yellow;
+$page-header-link-hover-color: $white;
+$page-header-btn-link-color: $yellow;
+$page-header-btn-link-hover-color: $orange;
+
+// page colours
+$body-bg: $white;
+$body-color: $black;
+$bg-page-section: $black;
+
+$hero-bg: $white-off;
+$hero-color: $blue-darker;
+$hero-icon: $yellow;
+$icon-big: $yellow;
+
+$blockquote-color: $blue-darker;
+$blockquote-bg: $yellow;
+
+// blocks
+$block-bg: $white-off;
+$block-color: $blue-dark;
+
+$block-alt-bg: $blue-darker;
+$block-alt-color: $white-off;
+
+// footer
+$page-footer-bg: $white-off;
+$page-footer-color: $blue-dark;
+$page-footer-link-color: $orange-dark;
+$page-footer-link-hover-color: $orange;
+
+$page-footer-banner: $white-off;
+$page-footer-banner-color: $blue-dark;

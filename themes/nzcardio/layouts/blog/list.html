@@ -1,0 +1,28 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{end}}
+
+{{ define "content" }}
+<section class="page">
+    <div class="container">
+    <h1 class="title">Blog</h1>
+
+    <div class="grid three tablet-break gap20">
+        {{ range .Paginator.Pages }}
+        <div class="mb-6">
+            <a href="{{ .Permalink }}"><img src="{{ .Params.Image }}" alt="" /></a>
+            
+
+            <div class="mb-2">
+                <h3 class="mb-0">{{ .Title }}</h3>
+                <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+            </div>
+
+            <p>{{ .Summary }}</p>
+            <a class="btn" href="{{ .Permalink }}">Read more <i class="lni lni-arrow-right"></i></a>
+        </div>
+        {{ end }}
+    </div>
+    {{ partial "pagination.html" . }}
+    
+  </div>
+</section>
+{{ end }}

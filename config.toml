@@ -1,0 +1,105 @@
+baseURL = 'https://nzcardio.github.io/'
+languageCode = 'en-us'
+title = 'Dr Sergej Cicovic'
+theme = "nzcardio"
+
+paginate = 20
+
+[params]
+    legal_title = "Dr Sergej Cicovic"
+
+    # Meta ------------
+    description = "Dr Sergej Cicovic: Interventional Cardiologist, Auckland, New Zealand"
+    keywords = "Dr Sergej Cicovic, Interventional Cardiologist, Auckland, New Zealand"
+
+    # Global settings ------------
+    favicon_32 = "/imgs/favicon-32x32.png"
+    favicon_16 = "/imgs/favicon-16x16.png"
+    
+    dateformat = "January 2, 2006"
+    
+    # layout settings ------------
+    headerLayout = "left" # options: left, center, right
+    footerLayout = "left" # options: left
+    footerNewsletter = true
+
+    # Blog ------------ 
+    author = "Dr Sergej Cicovic"
+    info = "Interventional Cardiologist"
+
+    # analytics
+    google_analitycs_id = ''
+    
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+
+# Menus
+# -------------------------------------
+# header
+[[menu.main]]
+    name = "Services"
+    weight = 1
+    url = "/#services"
+#[[menu.main]]
+#    name = "Weight Loss Surgery"
+#    weight = 2
+#    url = "/procedures/weight-loss-surgery"
+#[[menu.main]]
+#    name = "Registration"
+#    weight = 3
+#    url = "/patient-registration-form"
+[[menu.main]]
+    name = "Contact"
+    weight = 4
+    url  = "/#contact"
+
+
+# Footer (these add onto the header menu)
+# [[menu.footer]]
+#     name = "Terms and Conditions"
+#     weight = 1
+#     url  = "/terms-and-conditions"
+#[[menu.footer]]
+#    name = "Privacy policy"
+#    weight = 1
+#    url  = "/privacy-policy"
+
+
+# Social panel (leave empty to hide)
+[[menu.social]]
+    name = "fab fa-instagram"
+    weight = 1
+    url  = ""
+[[menu.social]]
+    name = "lni lni-facebook-original"
+    weight = 2
+    url  = ""
+[[menu.social]]
+    name = "fab fa-twitter"
+    weight = 3
+    url  = "asd"
+[[menu.social]]
+    name = "fab fa-tiktok"
+    weight = 4
+    url  = "ticktok"
+[[menu.social]]
+    name = "fab fa-youtube"
+    weight = 5
+    url  = "youtube"
+[[menu.social]]
+    name = "fab fa-linkedin-in"
+    weight = 6
+    url  = "asd"
+[[menu.social]]
+    name = "lni lni-envelope"
+    weight = 7
+    url  = "bcchan.ent@gmail.com"
+
+
+    

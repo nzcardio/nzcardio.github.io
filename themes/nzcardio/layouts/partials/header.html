@@ -1,0 +1,68 @@
+<header id="page-header" class="{{ .Site.Params.headerLayout }} animated fadeIn page-at-top"
+    :class="$store.menuTrigger.checked ? 'menu-checked' : ''" x-data="">
+
+    <div>
+        <!-- Desktop -->
+        <div id="logo" class="animated fadeIn">
+            {{/*  <a href="/" @click="$store.menuTrigger.setOff()"><img src="/imgs/logo.png" alt="{{ .Site.Title }}" /></a>  */}}
+            <a href="/#" @click="$store.menuTrigger.setOff()">
+                <div class="logo-block">
+                    <div class="icon-wrapper">
+                        <svg class="icon">
+                            <use href="/imgs/icons.svg#logo-icon"></use>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="title">Dr Sergej Cicovic</div>
+                        <div class="tag-line">Cardiology and Cardiac Interventions</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div id="main-menu" class="animated fadeIn">
+            <nav>
+                <ul>
+                    {{ with .Site.Menus.main}}
+                    {{ range sort . }}
+                    <li class="navigation-item">
+                        <a class="navigation-link {{ .Title }}" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+
+            </nav>
+
+            <!-- Mobile -->
+            <nav role="navigation" class="phone-menu">
+                <div id="menuToggle">
+                    <input type="checkbox" id="menu-trigger" x-model="$store.menuTrigger.checked" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <ul id="menu" :class="$store.menuTrigger.checked ? 'fadeIn' : 'fadeOut'">
+                        <li class="animated" :class="$store.menuTrigger.checked ? 'fadeInLeft' : 'fadeOut'">
+                            <a href="/contact" class="btn white">Contact
+                                <svg class="icon">
+                                    <use href="/imgs/icons.svg#bubbles"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        {{ with .Site.Menus.main}}
+                        {{ range sort . }}
+                        <li class="navigation-item animated"
+                            :class="$store.menuTrigger.checked ? 'fadeInLeft' : 'fadeOut'">
+                            <a class="navigation-link" href="{{ .URL | absLangURL }}"
+                                @click="$store.menuTrigger.checked=false">{{ .Name }}</a>
+                        </li>
+                        {{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+</header>

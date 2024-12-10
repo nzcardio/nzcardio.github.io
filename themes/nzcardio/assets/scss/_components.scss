@@ -1,0 +1,246 @@
+/* 
+ * General component styles that are used everywhere - eg: a button
+ */
+
+.date {
+    color: $grey-2;
+    font-size: small;
+}
+
+button,
+.btn {
+    font-family: inherit;
+    display: inline-grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+    background: $button-primary;
+    color: $white;
+    padding: 10px 20px;
+    @include border-radius($border-radius);
+    text-align: center;
+    cursor: pointer;
+    border: 0 none;
+    // font-size: 100%;
+    @include transition(color 200ms ease-out 0.1s);
+    @include transition(background-color 200ms);
+
+    &.inline {
+        display: inline !important;
+    }
+
+    &:disabled {
+        background: $grey-2;
+
+        &:hover {
+            background: $grey-2;
+        }
+    }
+
+    &.sign-up {
+        font-size: 2em;
+        padding: 10px 60px;
+    }
+
+    &:hover {
+        background: $button-primary-hover;
+        color: $white;
+        @include transition(background-color 500ms);
+        text-decoration: none;
+    }
+
+    &.bg-green {
+        background: $green;
+
+        &:hover {
+            background: $green-dark;
+        }
+    }
+
+    &.bg-blue {
+        background: $blue;
+
+        &:hover {
+            background: $blue-dark;
+        }
+    }
+
+    &.bg-blue-dark {
+        background: $blue-dark;
+
+        &:hover {
+            background: $blue-darker;
+        }
+    }
+
+    &.bg-red {
+        background: $red;
+
+        &:hover {
+            background: $red-dark;
+        }
+    }
+
+    &.back {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+}
+
+button {
+    padding: 8px 20px;
+}
+
+.badge {
+    text-align: center;
+
+    img {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 10;
+    }
+}
+
+.btn-select {
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile {
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.blog-profile {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 30px 0 10px 0;
+    margin: 0 auto;
+    max-width: 280px;
+}
+
+.quote-profile {
+    max-width: 100px;
+}
+
+#tab_wrapper {
+    min-height: 361px;
+
+    .services {
+
+        @include for-phone-only {
+            min-height: 500px;
+        }
+
+        .icon {
+            position: absolute;
+            top: -120px;
+            width: 100%;
+        }
+    }
+}
+
+.nav-arrows {
+    font-size: 42px;
+    text-align: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 10px 10px 10px 10px 1fr;
+    gap: 10px;
+    align-items: center;
+
+    .dot {
+        display: inline-block;
+        border-radius: 50%;
+        content: '';
+        background: $hover;
+        width: 10px;
+        height: 10px;
+
+        &.active {
+            background: $link;
+        }
+    }
+
+}
+
+.affiliated-logos {
+    max-width: 500px;
+    margin: 0 auto;
+
+    &.two {
+        grid-template-columns: minmax(55px, 1fr) minmax(200px, 2fr) !important;
+    }
+
+    .four {
+        grid-template-columns: minmax(75px, 1fr) minmax(255px, 1fr) minmax(75px, 1fr) minmax(275px, 1fr);
+    }
+
+    .acc {
+        width: 75px;
+        height: 75px;
+    }
+
+    .nib {
+        width: 75px;
+        height: 75px;
+    }
+
+    .southern-cross {
+        min-width: 275px;
+        max-height: 50px;
+    }
+
+    .college-of-surgens {
+        min-width: 280px;
+    }
+
+    @include for-phone-only {
+        .four {
+            grid-template-columns: minmax(50px, 100px) minmax(175px, 1fr);
+        }
+
+        .acc {
+            width: 50px;
+            height: 50px;
+        }
+
+        .nib {
+            width: 50px;
+            height: 50px;
+        }
+
+        .southern-cross {
+            min-width: 175px;
+            max-height: 50px;
+        }
+
+        .college-of-surgens {
+            min-width: 175px;
+        }
+    }
+}
+
+.content-block {
+    background: $block-bg;
+    color: $block-color;
+}
+
+.content-block-alt {
+    background: $block-alt-bg;
+    color: $block-alt-color;
+}
