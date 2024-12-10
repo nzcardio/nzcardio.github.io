@@ -96,7 +96,7 @@
                 }
 
                 &:first-child {
-                    padding-top: 17vh;
+                    padding-top: 10%;
 
                     @include for-tablet-portrait-up {
                         padding-top: 0;
@@ -109,7 +109,7 @@
 
                 h1 {
                     margin: 0;
-                    font-size: 40px;
+                    font-size: 35px;
                     padding-top: 20px;
 
                     @include for-tablet-portrait-up {
