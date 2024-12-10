@@ -29,7 +29,7 @@ paginate = 20
     info = "Interventional Cardiologist"
 
     # analytics
-    google_analitycs_id = ''
+    google_analitycs_id = 'G-57YBHTB355'
     
 [taxonomies]
     category = "categories"
