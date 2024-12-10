@@ -1,4 +1,5 @@
-baseURL = 'https://nzcardio.github.io/'
+baseURL = 'http://nzcardio.github.io/'
+#baseURL = 'https://nzcardio.github.io/'
 languageCode = 'en-us'
 title = 'Dr Sergej Cicovic'
 theme = "nzcardio"
