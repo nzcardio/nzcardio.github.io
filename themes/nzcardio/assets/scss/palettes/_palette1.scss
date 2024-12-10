@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair Display&family=Work+Sans&display=swap');
 $font-title: 'Work Sans', serif;
 $font-body: 'Open sans', sans-serif;
-$font-body-alt: 'Work Sans', sans-serif;
+$font-body-alt: 'Poppins', sans-serif;
 $font-logo: 'Playfair Display', serif;
 
 $black: #001514;
@@ -81,5 +81,5 @@ $page-footer-banner-color: $blue-dark;
 
 // overrides
 h3,h4,h5,h6 {
-    font-family: $font-body-alt !important;
+    font-family: $font-body !important;
 }
