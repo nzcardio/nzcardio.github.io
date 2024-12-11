@@ -88,12 +88,20 @@
         color: $block-alt-color;
 
         @include for-phone-only {
-            
             top: 0px;
             left: 0px;
             bottom: 0px;
             right: 0px;
-            width: calc(100vw - 90px);
+            width: calc(100vw - 40px);
+            height: 100%;
+            margin: 0;
+            overflow: auto;
+            border-radius: 0px;
+            padding: 20px;
+
+            form {
+                padding-bottom: 40px;
+            }
         }
 
         > button {
