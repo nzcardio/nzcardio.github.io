@@ -70,7 +70,7 @@
 
 <div class="popup card animated fadeIn" popover id="contact-form">
     <button popovertarget="contact-form" popovertargetaction="hide"><i data-lucide="x"></i></button>
-    <form id="contactform" action="https://staticcontact.com/send/3af146b8-f72a-49e5-b54b-3b3895ca4982" method="post" class=""
+    <form id="contactform" action="https://staticcontact.com/send/3af146b8-f72a-49e5-b54b-3b3895ca4982" method="post" id="contactform"
         x-data="{type:'contact'}">
         <div class="radio-buttons mb-2">
             <div><label :class="type=='contact' ? 'selected':''">
@@ -111,9 +111,20 @@
         <label for="message">Message <span class="red">*</span></label>
         <textarea name="message" class="mb-2" rows="8" required></textarea>
 
-        <button type="submit">Submit</button>
-        <script src="https://staticcontact.com/js/static_contact_botbuster.js"></script>
+        <button class="g-recaptcha" data-sitekey="6LcJxagqAAAAAOISmE5d6XzzjahSuazibaYe9HDg" data-callback='onSubmit' data-action='submit'>Submit </button>
     </form>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+            var form = document.getElementById("contactform");
+            if (form.checkValidity()) {
+                form.submit();
+            } else {
+                grecaptcha.reset();
+                form.reportValidity();
+            }
+        }
+    </script>
 </div>
 
 <div class="align-center copyright small p-2"> &copy; {{ now.Format "2006"}} {{ .Site.Params.legal_title }}. All
