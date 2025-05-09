@@ -4,7 +4,7 @@
         <div class="footer-grid">
             <div class="scrollFadeIn">
                 <h2 id="contact" class="underline">Contact</h2>
-                
+
                 <!-- <div class="x-large follow">
                     {{ with .Site.Menus.social}}
                         {{ range sort . }}
@@ -28,7 +28,7 @@
                                 <a href="tel:+6495209540" class="blue-dark">+64 (09) 520 9540</a>
                             </div>
                         </div>
-                        
+
                         <div class="grid two force middle gap2 mb-2" style="--columns: auto 1fr">
                             <div><i data-lucide="map-pin-house"></i></div>
                             <div>
@@ -44,10 +44,11 @@
                         <div class="grid two force middle gap2 mb-2" style="--columns: auto 1fr">
                             <div><i data-lucide="message-circle-heart"></i></div>
                             <div>
-                                <button class="btn" popovertarget="contact-form">Contact us or book an appointment</button>
+                                <button class="btn" popovertarget="contact-form">Contact us or book an
+                                    appointment</button>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -57,7 +58,8 @@
                     <div class="map_wrapper">
                         <div class="map">
                             <iframe width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
-                                referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBAHy5RJXYl1fJQF6_hFtELvph9uFNFCeY&zoom=15&q=Ascot+Hospital+90+Greenlane+East+Remuera+Auckland+1051">
+                                referrerpolicy="no-referrer-when-downgrade"
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBAHy5RJXYl1fJQF6_hFtELvph9uFNFCeY&zoom=15&q=The+Cardiac+Clinic+90+Greenlane+East+Remuera+Auckland+1051">
                             </iframe>
                         </div>
                     </div>
@@ -70,19 +72,19 @@
 
 <div class="popup card animated fadeIn" popover id="contact-form">
     <button popovertarget="contact-form" popovertargetaction="hide"><i data-lucide="x"></i></button>
-    <form id="contactform" action="https://staticcontact.com/send/3af146b8-f72a-49e5-b54b-3b3895ca4982" method="post" id="contactform"
-        x-data="{type:'contact'}">
+    <form id="contactform" action="https://staticcontact.com/send/3af146b8-f72a-49e5-b54b-3b3895ca4982" method="post"
+        id="contactform" x-data="{type:'contact'}">
         <div class="radio-buttons mb-2">
             <div><label :class="type=='contact' ? 'selected':''">
-                <input type="radio" name="type" value="contact" x-model="type">Contact us <!-- <span
+                    <input type="radio" name="type" value="contact" x-model="type">Contact us <!-- <span
                     x-show="type=='contact'"><i data-lucide="check"
                         class="icon-small animated fadeIn faster"></i></span> -->
-            </label></div>
+                </label></div>
             <div><label :class="type=='appointment' ? 'selected':''">
-                <input type="radio" name="type" value="appointment" x-model="type">Book an appointment <!-- <span
+                    <input type="radio" name="type" value="appointment" x-model="type">Book an appointment <!-- <span
                     x-show="type=='appointment'"><i data-lucide="check"
                         class="icon-small animated fadeIn faster"></i></span> -->
-            </label>
+                </label>
             </div>
         </div>
 
@@ -111,7 +113,8 @@
         <label for="message">Message <span class="red">*</span></label>
         <textarea name="message" class="mb-2" rows="8" required></textarea>
 
-        <button class="g-recaptcha" data-sitekey="6LcJxagqAAAAAOISmE5d6XzzjahSuazibaYe9HDg" data-callback='onSubmit' data-action='submit'>Submit </button>
+        <button class="g-recaptcha" data-sitekey="6LcJxagqAAAAAOISmE5d6XzzjahSuazibaYe9HDg" data-callback='onSubmit'
+            data-action='submit'>Submit </button>
     </form>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
