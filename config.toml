@@ -4,7 +4,7 @@ languageCode = 'en-us'
 title = 'Dr Sergej Cicovic'
 theme = "nzcardio"
 
-paginate = 20
+pagination.pagerSize = 20
 
 [params]
     legal_title = "Dr Sergej Cicovic"
